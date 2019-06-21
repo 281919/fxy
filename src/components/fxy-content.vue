@@ -3,7 +3,7 @@
   <div class='content-tab'>
   <div class='box box-left'>
        
-  <a href="#" class="button">
+  <a :herf=url class="button">
         <span class='icon'><img src="../assets/left.png" alt=""></span>
         <!-- <span class='icon'><img src="../assets/xm1.png" alt=""></span> -->
         <div class='button-icon'>
@@ -16,7 +16,7 @@
   </div>
   <div class='box box-center'>
        
-  <a href="#" class="button">
+  <a href="#" class="button" >
         <span class='icon'><img src="../assets/center.png" alt=""></span>
         <div class='button-icon'>
           <!-- <div class='icon-2'><img src="" alt=""></div> -->
@@ -28,20 +28,20 @@
   </div>
   <div class='box box-right'>
   
-  <a href="#" class="button">
-        <span class='icon'><img src="../assets/right.png" alt=""></span>
+  <div class='button' >
+        <span class='icon' @click='toBaidu'><img src="../assets/right.png" alt=""></span>
         <div class='button-icon'>
           <div class='icon-2'><i class='el-icon-office-building'></i></div>
           <div class='icon-button'><span>相关法律</span></div>
           </div>
-        
-      </a>
+  </div>
   </div>
   <div class='bottom-1'>
   <el-button type="primary" round>申报视频</el-button>
   </div>
-  <div class='bottom-2'>
-    <p>建议使用火狐浏览器，谷歌浏览器或者360极速浏览器</p>
+  <div class='bottom-2' >
+    <a :href=url1>建议使用火狐浏览器，谷歌浏览器或者360极速浏览器</a>
+    <!-- <p>建议使用火狐浏览器，谷歌浏览器或者360极速浏览器</p> -->
   </div>
   </div>
 </div>
@@ -51,12 +51,22 @@
 
 <script>
 export default {
-  name:'fxy-content'
+  name:'fxy-content',
+  data(){
+    return{
+      url:'https://www.baidu.com',
+      url1:'./action/demo.html'
+    }
+  },
+  methods:{
+    toBaidu(){
+      window.open('./action/demo.html');
+    }
+  }
 }
 </script>
 
 <style>
-
 .content-mid{
   width:1024px;
   height:485px;
